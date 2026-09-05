@@ -273,8 +273,9 @@ The script automatically runs the defined functionality tests and uses Valgrind 
 
 A successful test run should show that the functionality tests pass and that Valgrind reports no memory leaks or memory errors.
 ## Technologies
-
-* C
-* GCC
-* Linux / WSL
-* GitHub
+C
+Bash
+GCC
+Valgrind
+Linux / WSL
+GitHub
