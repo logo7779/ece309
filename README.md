@@ -257,7 +257,21 @@ Program ended.
 ```
 
 The program should terminate without crashing.
+## Automated Testing
 
+The project includes a Bash test script named test.sh that automatically tests the functionality of the harness.c program and performs memory-leak checking using Valgrind.
+
+Before running the test script, give it execute permission:
+
+chmod +x test.sh
+
+Then execute the test script:
+
+./test.sh
+
+The script automatically runs the defined functionality tests and uses Valgrind to check for memory leaks and memory-related errors.
+
+A successful test run should show that the functionality tests pass and that Valgrind reports no memory leaks or memory errors.
 ## Technologies
 
 * C
