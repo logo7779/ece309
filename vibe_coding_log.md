@@ -844,3 +844,37 @@ The program terminates normally.
 There is no crash or segmentation fault.
 
 These tests collectively demonstrate the normal inputs, all four supported calculator operations, calculator error handling, history limit, continued operation after recoverable errors, and clean termination.
+I want you to create a bash script 'test.sh' that will automatically do basic state checking and do memory-leak checking for the entire harness.c file we have created.
+
+Yes. I created test.sh to test the current harness.c without modifying it.
+
+It checks:
+
+Compilation with gcc -std=c11 -Wall -Wextra -pedantic
+hello
+Normal text
+Addition
+Subtraction
+Multiplication
+Division
+Division by zero
+Unsupported mathematical operations
+Continued execution after recoverable errors
+Six-message history test
+exit and clean termination
+Valgrind memory leaks
+Returns exit status 0 only when all tests pass
+Download
+
+Download test.sh
+
+Running it in your WSL/Linux terminal
+
+Put test.sh in the same directory as harness.c, then run:
+
+chmod +x test.sh
+./test.sh
+
+One important limitation: the current harness.c does not display its internal history, so a completely external script cannot literally inspect the history[] array and prove that Message 1 was removed. The script tests that all six messages are accepted and that execution continues, while leaving the existing harness.c completely unchanged.
+
+The Valgrind portion does directly check the program's allocated memory and will fail the test if memory is reported as definitely or indirectly lost.
