@@ -1,4 +1,3 @@
-# ece309
 # C LLM Harness
 
 ## Description
